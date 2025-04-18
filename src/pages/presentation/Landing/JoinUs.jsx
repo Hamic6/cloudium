@@ -57,7 +57,7 @@ function JoinUs() {
               size="large"
               target="_blank"
             >
-              Get Mira Pro
+              Obtenir l'abonement Cloudium 
             </Button>
           </Grid>
         </Grid>

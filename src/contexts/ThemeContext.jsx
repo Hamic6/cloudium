@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 import { THEMES } from "@/constants";
 
 const initialState = {
@@ -15,13 +16,7 @@ function ThemeProvider({ children }) {
     const storedTheme = localStorage.getItem("theme");
 
     if (storedTheme) {
-      try {
-        _setTheme(JSON.parse(storedTheme));
-      } catch (e) {
-        console.error("Invalid JSON in localStorage:", e);
-        // Optionally, you can reset to the default theme if parsing fails
-        _setTheme(THEMES.DEFAULT);
-      }
+      _setTheme(JSON.parse(storedTheme));
     }
   }, []);
 

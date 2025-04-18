@@ -42,7 +42,7 @@ const AppBarComponent = () => (
           <Grid container alignItems="center">
             <Grid>
               <Brand>
-                <BrandIcon /> Mira
+                <BrandIcon /> Cloudium
               </Brand>
             </Grid>
             <Grid size="grow" />

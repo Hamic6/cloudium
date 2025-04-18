@@ -20,10 +20,10 @@ function SignIn() {
       <BigAvatar alt="Lucy" src="/static/img/avatars/avatar-1.jpg" />
 
       <Typography component="h1" variant="h3" align="center" gutterBottom>
-        Bienvenue !
+        Welcome back, Lucy!
       </Typography>
       <Typography component="h2" variant="subtitle1" align="center">
-        Connectez-vous pour Naviguer
+        Sign in to your account to continue
       </Typography>
 
       <SignInComponent />

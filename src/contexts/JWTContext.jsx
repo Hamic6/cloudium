@@ -1,7 +1,10 @@
 import React, { createContext, useEffect, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
+
 import axios from "@/utils/axios";
-import { isValidToken, setSession, clearSession } from "@/utils/jwt";
+import { isValidToken, setSession } from "@/utils/jwt";
+
+// Note: If you're trying to connect JWT to your own backend, don't forget
+// to remove the Axios mocks in the `/src/index.js` file.
 
 const INITIALIZE = "INITIALIZE";
 const SIGN_IN = "SIGN_IN";
@@ -34,12 +37,14 @@ const JWTReducer = (state, action) => {
         isAuthenticated: false,
         user: null,
       };
+
     case SIGN_UP:
       return {
         ...state,
         isAuthenticated: true,
         user: action.payload.user,
       };
+
     default:
       return state;
   }
@@ -49,7 +54,6 @@ const AuthContext = createContext(null);
 
 function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(JWTReducer, initialState);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const initialize = async () => {
@@ -61,6 +65,8 @@ function AuthProvider({ children }) {
 
           const response = await axios.get("/api/auth/my-account");
           const { user } = response.data;
+
+          console.log(user);
 
           dispatch({
             type: INITIALIZE,
@@ -94,21 +100,24 @@ function AuthProvider({ children }) {
   }, []);
 
   const signIn = async (email, password) => {
-    const response = await axios.post("/api/auth/sign-in", { email, password });
+    const response = await axios.post("/api/auth/sign-in", {
+      email,
+      password,
+    });
     const { accessToken, user } = response.data;
 
     setSession(accessToken);
     dispatch({
       type: SIGN_IN,
-      payload: { user },
+      payload: {
+        user,
+      },
     });
-    navigate("/dashboard");
   };
 
-  const signOut = () => {
-    clearSession();
+  const signOut = async () => {
+    setSession(null);
     dispatch({ type: SIGN_OUT });
-    navigate("/");
   };
 
   const signUp = async (email, password, firstName, lastName) => {
@@ -120,12 +129,13 @@ function AuthProvider({ children }) {
     });
     const { accessToken, user } = response.data;
 
-    setSession(accessToken);
+    window.localStorage.setItem("accessToken", accessToken);
     dispatch({
       type: SIGN_UP,
-      payload: { user },
+      payload: {
+        user,
+      },
     });
-    navigate("/dashboard");
   };
 
   const resetPassword = (email) => console.log(email);
