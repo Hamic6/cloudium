@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src/",
+    "paths": {
+      // Folders
+      "@/components/*": ["components/*"],
+      "@/contexts/*": ["contexts/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/layouts/*": ["layouts/*"],
+      "@/mocks/*": ["mocks/*"],
+      "@/pages/*": ["pages/*"],
+      "@/redux/*": ["redux/*"],
+      "@/theme/*": ["theme/*"],
+      "@/utils/*": ["utils/*"],
+      "@/vendor/*": ["vendor/*"],
+
+      // Files
+      "@/constants": ["constants"],
+      "@/config": ["config"],
+      "@/i18n": ["i18n"],
+      "@/mocks": ["mocks/index"],
+      "@/theme": ["theme/index"],
+    }
+  }
+}
