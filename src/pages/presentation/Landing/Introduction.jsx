@@ -152,10 +152,9 @@ function Introduction() {
             }}
           >
             <Content>
-              <Version variant="body2">v5.0.0</Version>
+              <Version variant="body2">v1.0.0</Version>
               <Title variant="h1" gutterBottom>
-                The simplest and fastest way to build your next{" "}
-                <span>Material UI</span> dashboard or app.
+                Simplifiez votre gestion avec <span>Cloudium</span>
               </Title>
               <Grid container justifyContent="center" spacing={4}>
                 <Grid
@@ -165,9 +164,7 @@ function Introduction() {
                   }}
                 >
                   <Subtitle color="textSecondary">
-                    Mira comes with hundreds of UI elements, forms, tables,
-                    charts, pages and icons that helps you to create your web
-                    apps or applications faster.
+                    Cloudium est un ERP spécialisé dans la gestion de la facturation et des stocks. Conçu pour les entreprises de toutes tailles, il offre des outils puissants et une interface intuitive pour optimiser vos processus.
                   </Subtitle>
                 </Grid>
               </Grid>
@@ -179,13 +176,13 @@ function Introduction() {
                   size="large"
                 >
                   <Visibility />
-                  Live Demo
+                  Voir la démo
                   <ArrowForward />
                 </Button>
               </Box>
 
               <Typography variant="body2" color="textSecondary">
-                Available for:
+                Disponible pour :
               </Typography>
               <div
                 className={`animate__animated ${
@@ -238,7 +235,7 @@ function Introduction() {
               <ImageWrapper>
                 <NavLink to="/dashboard/analytics" target="_blank">
                   <Image
-                    alt="Mira - React Admin Template"
+                    alt="Cloudium ERP Dashboard"
                     src={`/static/img/screenshots/dashboard-analytics-large.jpg`}
                   />
                 </NavLink>

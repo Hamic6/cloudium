@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
-
-import { Box, Chip, Container, Grid2 as Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Grid2 as Grid, Typography } from "@mui/material";
 import { spacing } from "@mui/system";
-
-import { THEMES } from "@/constants";
-import useTheme from "@/hooks/useTheme";
 
 const Wrapper = styled.div`
   ${spacing};
@@ -14,10 +10,10 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const DemoContent = styled.div(spacing);
-
-const DemoLink = styled.div`
-  cursor: pointer;
+const Section = styled.div`
+  ${spacing};
+  text-align: center;
+  margin-bottom: 64px;
 `;
 
 const DemoImage = styled.img`
@@ -33,89 +29,118 @@ const DemoImage = styled.img`
   }
 `;
 
-const DemoChip = styled(Chip)`
-  background-color: ${(props) => props.theme.palette.secondary.main};
-  border-radius: 5px;
-  color: ${(props) => props.theme.palette.common.white};
-  font-size: 55%;
-  height: 18px;
-  margin-top: -16px;
-  padding: 3px 0;
-
-  span {
-    padding-left: ${(props) => props.theme.spacing(1.375)};
-    padding-right: ${(props) => props.theme.spacing(1.375)};
-  }
-`;
-
 const TypographyOverline = styled(Typography)`
   text-transform: uppercase;
   color: ${(props) => props.theme.palette.primary.main};
   font-weight: ${(props) => props.theme.typography.fontWeightMedium};
 `;
 
-const Variant = ({ theme, title, img, isNew = false }) => {
+function Demos() {
   const navigate = useNavigate();
-  const { setTheme } = useTheme();
 
-  const toggleDemo = (theme) => {
-    setTheme(theme);
-    navigate("/dashboard/analytics");
+  const handleDemoRequest = () => {
+    navigate("/demo-request");
   };
 
   return (
-    <Grid
-      size={{
-        xs: 12,
-        sm: 6,
-        md: 4,
-        lg: 4,
-      }}
-    >
-      <DemoContent px={2}>
-        <DemoLink onClick={() => toggleDemo(theme)}>
-          <DemoImage
-            alt={`${title} - React Admin Template`}
-            src={`/static/img/screenshots/${img}.jpg`}
-          />
-        </DemoLink>
-        <Box mb={3} />
-        <Typography variant="h6">
-          {title} {isNew && <DemoChip label="New" />}
-        </Typography>
-      </DemoContent>
-    </Grid>
-  );
-};
-
-function Demos() {
-  return (
     <Wrapper pt={16} pb={20} id="demos">
       <Container>
-        <TypographyOverline variant="body2" gutterBottom>
-          Demos
-        </TypographyOverline>
-        <Typography variant="h2" component="h3" gutterBottom>
-          Choose from 50+ pages and 6 different color schemes
-        </Typography>
-        <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-          The package includes 50+ prebuilt pages, 6 theme variants and 3
-          prebuilt dashboards.
-        </Typography>
-        <Box mb={8} />
+        {/* Section de présentation de Cloudium */}
+        <Section>
+          <TypographyOverline variant="body2" gutterBottom>
+            Présentation
+          </TypographyOverline>
+          <Typography variant="h2" component="h3" gutterBottom>
+            Cloudium : L'ERP pour une gestion simplifiée
+          </Typography>
+          <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+            Cloudium est un ERP spécialisé dans la gestion de la facturation, conçu pour répondre aux besoins des entreprises de toutes tailles. Sa version Enterprise est entièrement customisable, permettant aux organisations d’adapter les fonctionnalités à leurs processus internes.
+          </Typography>
+        </Section>
 
-        <Grid container spacing={10}>
-          <Variant
-            theme={THEMES.DEFAULT}
-            title="Default variant"
-            img="default"
-          />
-          <Variant theme={THEMES.BLUE} title="Blue variant" img="blue" />
-          <Variant theme={THEMES.DARK} title="Dark variant" img="dark" isNew />
-          <Variant theme={THEMES.GREEN} title="Green variant" img="green" />
-          <Variant theme={THEMES.INDIGO} title="Indigo variant" img="indigo" />
-          <Variant theme={THEMES.LIGHT} title="Light variant" img="light" />
-        </Grid>
+        {/* Avantages clés */}
+        <Section>
+          <TypographyOverline variant="body2" gutterBottom>
+            Avantages clés
+          </TypographyOverline>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6">Automatisation de la facturation</Typography>
+              <Typography variant="body2" color="textSecondary">
+                Réduction des erreurs et gain de temps.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6">Personnalisation avancée</Typography>
+              <Typography variant="body2" color="textSecondary">
+                Modules ajustables selon les besoins spécifiques de chaque entreprise.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6">Accès en temps réel aux données</Typography>
+              <Typography variant="body2" color="textSecondary">
+                Suivi précis des performances et des finances.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6">Intégration fluide avec Stripe</Typography>
+              <Typography variant="body2" color="textSecondary">
+                Paiements sécurisés et simplifiés.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Section>
+
+        {/* Possibilité de demander une démo */}
+        <Section>
+          <TypographyOverline variant="body2" gutterBottom>
+            Demandez une démo
+          </TypographyOverline>
+          <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+            Testez Cloudium avant de souscrire. Explorez ses fonctionnalités grâce à une version d’essai limitée ou demandez une démonstration personnalisée.
+          </Typography>
+          <Box mt={4}>
+            <Button variant="contained" color="primary" onClick={handleDemoRequest}>
+              Demander une démo
+            </Button>
+          </Box>
+        </Section>
+
+        {/* Présentation inspirée des leaders du marché */}
+        <Section>
+          <TypographyOverline variant="body2" gutterBottom>
+            Pourquoi choisir Cloudium ?
+          </TypographyOverline>
+          <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+            Comme les solutions ERP de Sage, Cloudium met en avant :
+          </Typography>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6">Modules clés</Typography>
+              <Typography variant="body2" color="textSecondary">
+                Finances, RH, logistique, et bien plus.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6">Flexibilité</Typography>
+              <Typography variant="body2" color="textSecondary">
+                Adaptation aux besoins spécifiques des entreprises.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6">Analyse des données</Typography>
+              <Typography variant="body2" color="textSecondary">
+                Prise de décision rapide et efficace grâce à des outils d’analyse avancés.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6">Interface intuitive</Typography>
+              <Typography variant="body2" color="textSecondary">
+                Une interface moderne et facile à utiliser.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Section>
       </Container>
     </Wrapper>
   );
