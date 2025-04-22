@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, Container, Grid2 as Grid, Typography } from "@mui/material";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import des styles du carousel
 import { spacing } from "@mui/system";
 
 const Wrapper = styled.div`
@@ -16,17 +18,13 @@ const Section = styled.div`
   margin-bottom: 64px;
 `;
 
-const DemoImage = styled.img`
-  max-width: 100%;
+const CarouselImage = styled.img`
+  max-width: 50%; /* Réduction de la largeur à 50% */
   height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Centrer l'image */
   display: block;
-  box-shadow: 0 4px 12px 0 rgba(18, 38, 63, 0.125);
-  transition: 0.15s ease-in-out;
-  border-radius: 4px;
-
-  &:hover {
-    transform: scale(1.0325);
-  }
 `;
 
 const TypographyOverline = styled(Typography)`
@@ -41,6 +39,29 @@ function Demos() {
   const handleDemoRequest = () => {
     navigate("/demo-request");
   };
+
+  const advantages = [
+    {
+      title: "Statistiques avancées",
+      description: "Obtenez des analyses détaillées sur les performances de votre entreprise.",
+      image: "/static/img/advantages/automation.jpg",
+    },
+    {
+      title: "Personnalisation avancée",
+      description: "Modules ajustables selon les besoins spécifiques de chaque entreprise.",
+      image: "/static/img/advantages/customization.jpg",
+    },
+    {
+      title: "Accès en temps réel aux données",
+      description: "Suivi précis des performances et des finances.",
+      image: "/static/img/advantages/realtime.jpg",
+    },
+    {
+      title: "Intégration fluide avec Stripe",
+      description: "Paiements sécurisés et simplifiés.",
+      image: "/static/img/advantages/stripe.jpg",
+    },
+  ];
 
   return (
     <Wrapper pt={16} pb={20} id="demos">
@@ -58,37 +79,30 @@ function Demos() {
           </Typography>
         </Section>
 
-        {/* Avantages clés */}
+        {/* Avantages clés avec carousel */}
         <Section>
           <TypographyOverline variant="body2" gutterBottom>
             Avantages clés
           </TypographyOverline>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Automatisation de la facturation</Typography>
-              <Typography variant="body2" color="textSecondary">
-                Réduction des erreurs et gain de temps.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Personnalisation avancée</Typography>
-              <Typography variant="body2" color="textSecondary">
-                Modules ajustables selon les besoins spécifiques de chaque entreprise.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Accès en temps réel aux données</Typography>
-              <Typography variant="body2" color="textSecondary">
-                Suivi précis des performances et des finances.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Intégration fluide avec Stripe</Typography>
-              <Typography variant="body2" color="textSecondary">
-                Paiements sécurisés et simplifiés.
-              </Typography>
-            </Grid>
-          </Grid>
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            infiniteLoop
+            autoPlay
+            interval={5000}
+          >
+            {advantages.map((advantage, index) => (
+              <div key={index}>
+                <CarouselImage src={advantage.image} alt={advantage.title} />
+                <Typography variant="h6" gutterBottom>
+                  {advantage.title}
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  {advantage.description}
+                </Typography>
+              </div>
+            ))}
+          </Carousel>
         </Section>
 
         {/* Possibilité de demander une démo */}
@@ -104,42 +118,6 @@ function Demos() {
               Demander une démo
             </Button>
           </Box>
-        </Section>
-
-        {/* Présentation inspirée des leaders du marché */}
-        <Section>
-          <TypographyOverline variant="body2" gutterBottom>
-            Pourquoi choisir Cloudium ?
-          </TypographyOverline>
-          <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-            Comme les solutions ERP de Sage, Cloudium met en avant :
-          </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Modules clés</Typography>
-              <Typography variant="body2" color="textSecondary">
-                Finances, RH, logistique, et bien plus.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Flexibilité</Typography>
-              <Typography variant="body2" color="textSecondary">
-                Adaptation aux besoins spécifiques des entreprises.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Analyse des données</Typography>
-              <Typography variant="body2" color="textSecondary">
-                Prise de décision rapide et efficace grâce à des outils d’analyse avancés.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Interface intuitive</Typography>
-              <Typography variant="body2" color="textSecondary">
-                Une interface moderne et facile à utiliser.
-              </Typography>
-            </Grid>
-          </Grid>
         </Section>
       </Container>
     </Wrapper>

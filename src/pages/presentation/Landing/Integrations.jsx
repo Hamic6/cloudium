@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
-
-import { Button, Box, Container, Typography, Tooltip } from "@mui/material";
+import { Tooltip, Box, Container, Typography } from "@mui/material";
 import { spacing } from "@mui/system";
-import { ArrowForward as ArrowForwardIcon } from "@mui/icons-material";
 
 const Wrapper = styled.div`
   ${spacing};
@@ -30,134 +27,39 @@ const Brand = styled.div`
   margin: 10px;
 `;
 
-const ArrowForward = styled(ArrowForwardIcon)`
-  margin-left: ${(props) => props.theme.spacing(2)};
-`;
-
 function Integrations() {
   return (
     <Wrapper py={20}>
       <Container>
         <TypographyOverline variant="body2" gutterBottom>
-          Integrations
+          Nos Partenaires
         </TypographyOverline>
         <Typography variant="h2" component="h3" gutterBottom>
-          Launch faster with ready-to-deploy integrations
+          Nos partenaires stratégiques
+        </Typography>
+        <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+          Cloudium s'intègre parfaitement avec des partenaires de confiance pour offrir une expérience optimale.
         </Typography>
 
         <Box my={7}>
-          <Tooltip title="MUI v6">
+          <Tooltip title="Lrv">
             <Brand>
               <BrandIcon
-                alt="MUI"
-                src="/static/img/brands/material-ui.svg"
-                style={{ height: "34px", margin: "3px 0" }}
+                alt="Lrv"
+                src="/static/img/brands/Lrv.png"
+                style={{ height: "30px" }}
               />
             </Brand>
           </Tooltip>
-          <Tooltip title="React v18">
+          <Tooltip title="Sodeico">
             <Brand>
               <BrandIcon
-                alt="React"
-                src="/static/img/brands/react.svg"
-                style={{ height: "40px" }}
+                alt="Sodeico"
+                src="/static/img/brands/Sodeico.png"
+                style={{ height: "30px" }}
               />
             </Brand>
           </Tooltip>
-          <Tooltip title="Vite v5">
-            <Brand>
-              <BrandIcon
-                alt="Vite"
-                src="/static/img/brands/vite.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="Next.js v14">
-            <Brand>
-              <BrandIcon
-                alt="Next.js"
-                src="/static/img/brands/nextjs.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="Redux">
-            <Brand>
-              <BrandIcon
-                alt="Redux"
-                src="/static/img/brands/redux.svg"
-                style={{ height: "36px", margin: "2px 0" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="React Router v6">
-            <Brand>
-              <BrandIcon
-                alt="React Router v6"
-                src="/static/img/brands/react-router.svg"
-                style={{ height: "34px", margin: "3px 0" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="Firebase Authentication">
-            <Brand>
-              <BrandIcon
-                alt="Firebase Authentication"
-                src="/static/img/brands/firebase.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="Amazon Cognito">
-            <Brand>
-              <BrandIcon
-                alt="Amazon Cognito"
-                src="/static/img/brands/cognito.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="Auth0">
-            <Brand>
-              <BrandIcon
-                alt="Auth0"
-                src="/static/img/brands/auth0.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="JSON Web Token">
-            <Brand>
-              <BrandIcon
-                alt="JWT"
-                src="/static/img/brands/jwt.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="ESLint">
-            <Brand>
-              <BrandIcon
-                alt="eslint "
-                src="/static/img/brands/eslint.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-        </Box>
-        <Box>
-          <Button
-            component={NavLink}
-            to="/documentation/welcome"
-            variant="contained"
-            color="secondary"
-            size="large"
-            target="_blank"
-          >
-            Open Documentation
-            <ArrowForward />
-          </Button>
         </Box>
       </Container>
     </Wrapper>

@@ -47,21 +47,15 @@ function Testimonial() {
             }}
           >
             <Typography variant="h2" component="h3" gutterBottom>
-              &quot;Mira Pro is one of the best advanced React dashboard
-              templates for developers.&quot;
+              &quot;Cloudium est une application qui a su gérer et moderniser la facturation dans notre 
+              Entreprise &quot;
             </Typography>
             <AvatarWrapper>
-              <a
-                href="https://x.com/olivtassinari"
-                target="_blank"
-                rel="nofollow noreferrer noopener"
-              >
-                <Avatar src="/static/img/avatars/olivier.jpg" mr={3} />
-              </a>
+             
               <Typography color="textSecondary" variant="body2">
-                Olivier Tassinari,
+                Cyrille Navarre
                 <br />
-                Co-Founder MUI
+                Directeur chez {"Rayonvert "}
               </Typography>
             </AvatarWrapper>
           </Grid>

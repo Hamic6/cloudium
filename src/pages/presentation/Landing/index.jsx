@@ -17,8 +17,7 @@ function Presentation() {
       <Demos />
       <Testimonial />
       <Integrations />
-      <Features />
-      <FAQ />
+      <Features />     
       <JoinUs />
     </React.Fragment>
   );
