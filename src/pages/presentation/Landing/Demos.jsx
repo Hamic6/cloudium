@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Container, Grid2 as Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import des styles du carousel
 import { spacing } from "@mui/system";
@@ -19,7 +19,7 @@ const Section = styled.div`
 `;
 
 const CarouselImage = styled.img`
-  max-width: 50%; /* Réduction de la largeur à 50% */
+  max-width: 35%; /* Réduction de la largeur à 25% */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -44,22 +44,22 @@ function Demos() {
     {
       title: "Statistiques avancées",
       description: "Obtenez des analyses détaillées sur les performances de votre entreprise.",
-      image: "/static/img/advantages/automation.jpg",
+      image: "/src/pages/illustrations/stat.png",
     },
     {
       title: "Personnalisation avancée",
       description: "Modules ajustables selon les besoins spécifiques de chaque entreprise.",
-      image: "/static/img/advantages/customization.jpg",
+      image: "/src/pages/illustrations/settings.jpg",
     },
     {
       title: "Accès en temps réel aux données",
       description: "Suivi précis des performances et des finances.",
-      image: "/static/img/advantages/realtime.jpg",
+      image: "/src/pages/illustrations/real-time.jpg",
     },
     {
-      title: "Intégration fluide avec Stripe",
-      description: "Paiements sécurisés et simplifiés.",
-      image: "/static/img/advantages/stripe.jpg",
+      title: "Paiements sécurisés",
+      description: "Intégration fluide avec Stripe pour des paiements sécurisés et simplifiés.",
+      image: "/src/pages/illustrations/secure_payment.jpg",
     },
   ];
 
