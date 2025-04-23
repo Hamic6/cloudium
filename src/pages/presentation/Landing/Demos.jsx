@@ -7,10 +7,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import des st
 import { spacing } from "@mui/system";
 
 // Import des images
-import statImage from "../illustrations/stat.png";
-import settingsImage from "../illustrations/settings.jpg";
-import realTimeImage from "../illustrations/real-time.jpg";
-import securePaymentImage from "../illustrations/secure_payment.jpg";
+import statImage from "../../illustrations/stat.png";
+import settingsImage from "../../illustrations/settings.jpg";
+import realTimeImage from "../../illustrations/real-time.jpg";
+import securePaymentImage from "../../illustrations/secure_payment.jpg";
 
 const Wrapper = styled.div`
   ${spacing};
