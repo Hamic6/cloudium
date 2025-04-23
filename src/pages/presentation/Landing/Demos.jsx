@@ -1,16 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import des styles du carousel
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { spacing } from "@mui/system";
 
-// Import des images
-import statImage from "../../illustrations/stat.png";
-import settingsImage from "../../illustrations/settings.jpg";
-import realTimeImage from "../../illustrations/real-time.jpg";
-import securePaymentImage from "../../illustrations/secure_payment.jpg";
+// ... (vos imports d'images restent les mêmes)
 
 // Wrapper pour le conteneur principal
 const Wrapper = styled.div`
@@ -31,30 +27,32 @@ const Section = styled.div`
 
 // Style des images dans le carousel
 const CarouselImage = styled.img`
-  width: 350px; /* Largeur augmentée */
-  height: 200px; /* Hauteur augmentée */
-  object-fit: contain; /* Changé de 'cover' à 'contain' pour voir l'image entière */
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   display: block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #f8f9fa; /* Fond pour les images avec transparence */
+  background-color: #f8f9fa;
 
   &:hover {
-    transform: scale(1.03); /* Zoom réduit sur survol */
+    transform: scale(1.03);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   }
 `;
 
 // Conteneur du slide pour mieux contrôler l'espace
 const SlideContainer = styled.div`
-  padding: 20px 40px; /* Plus d'espace sur les côtés */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 600px; /* Hauteur minimale fixe pour tous les slides */
+  min-height: ${props => props.mobile ? '450px' : '500px'};
 `;
 
 // Style pour les titres en survol
@@ -66,6 +64,9 @@ const TypographyOverline = styled(Typography)`
 
 function Demos() {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
 
   const handleDemoRequest = () => {
     navigate("/demo-request");
@@ -94,6 +95,13 @@ function Demos() {
     },
   ];
 
+  // Ajustement dynamique de la largeur des slides
+  const getCenterSlidePercentage = () => {
+    if (isMobile) return 90;  // Pleine largeur sur mobile
+    if (isTablet) return 60;  // Plus large sur tablette
+    return 40;               // Plus étroit sur desktop
+  };
+
   return (
     <Wrapper pt={16} pb={20} id="demos">
       <Container>
@@ -101,7 +109,7 @@ function Demos() {
           <TypographyOverline variant="body2" gutterBottom>
             Présentation
           </TypographyOverline>
-          <Typography variant="h2" component="h3" gutterBottom>
+          <Typography variant={isMobile ? "h3" : "h2"} component="h3" gutterBottom>
             Cloudium : L'ERP pour une gestion simplifiée
           </Typography>
           <Typography variant="subtitle1" color="textSecondary" gutterBottom>
@@ -119,8 +127,8 @@ function Demos() {
             infiniteLoop
             autoPlay
             interval={5000}
-            centerMode={true} // Active le mode centré
-            centerSlidePercentage={40} // Ajuste la largeur du slide visible
+            centerMode={!isMobile} // Désactive le mode centré sur mobile
+            centerSlidePercentage={getCenterSlidePercentage()}
             renderIndicator={(onClickHandler, isSelected, index, label) => (
               <li
                 style={{
@@ -141,12 +149,19 @@ function Demos() {
             )}
           >
             {advantages.map((advantage, index) => (
-              <SlideContainer key={index}>
+              <SlideContainer key={index} mobile={isMobile}>
                 <CarouselImage src={advantage.image} alt={advantage.title} />
                 <Typography variant="h6" gutterBottom style={{ marginTop: '20px' }}>
                   {advantage.title}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" style={{ maxWidth: '500px' }}>
+                <Typography 
+                  variant="body2" 
+                  color="textSecondary" 
+                  style={{ 
+                    maxWidth: isMobile ? '100%' : '500px',
+                    padding: isMobile ? '0 10px' : '0'
+                  }}
+                >
                   {advantage.description}
                 </Typography>
               </SlideContainer>
@@ -162,7 +177,7 @@ function Demos() {
             Testez Cloudium avant de souscrire. Explorez ses fonctionnalités grâce à une version d'essai limitée ou demandez une démonstration personnalisée.
           </Typography>
           <Box mt={4}>
-            <Button variant="contained" color="primary" onClick={handleDemoRequest}>
+            <Button variant="contained" color="primary" onClick={handleDemoRequest} size={isMobile ? "medium" : "large"}>
               Demander une démo
             </Button>
           </Box>
