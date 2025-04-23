@@ -6,6 +6,12 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import des styles du carousel
 import { spacing } from "@mui/system";
 
+// Import des images
+import statImage from "../illustrations/stat.png";
+import settingsImage from "../illustrations/settings.jpg";
+import realTimeImage from "../illustrations/real-time.jpg";
+import securePaymentImage from "../illustrations/secure_payment.jpg";
+
 const Wrapper = styled.div`
   ${spacing};
   background: ${(props) => props.theme.palette.background.paper};
@@ -19,7 +25,7 @@ const Section = styled.div`
 `;
 
 const CarouselImage = styled.img`
-  max-width: 35%; /* Réduction de la largeur à 25% */
+  max-width: 35%; /* Réduction de la largeur */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -44,22 +50,22 @@ function Demos() {
     {
       title: "Statistiques avancées",
       description: "Obtenez des analyses détaillées sur les performances de votre entreprise.",
-      image: "/src/pages/illustrations/stat.png",
+      image: statImage,
     },
     {
       title: "Personnalisation avancée",
       description: "Modules ajustables selon les besoins spécifiques de chaque entreprise.",
-      image: "/src/pages/illustrations/settings.jpg",
+      image: settingsImage,
     },
     {
       title: "Accès en temps réel aux données",
       description: "Suivi précis des performances et des finances.",
-      image: "/src/pages/illustrations/real-time.jpg",
+      image: realTimeImage,
     },
     {
       title: "Paiements sécurisés",
       description: "Intégration fluide avec Stripe pour des paiements sécurisés et simplifiés.",
-      image: "/src/pages/illustrations/secure_payment.jpg",
+      image: securePaymentImage,
     },
   ];
 
