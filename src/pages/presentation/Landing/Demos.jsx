@@ -6,7 +6,12 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { spacing } from "@mui/system";
 
-// ... (vos imports d'images restent les mêmes)
+import statImage from "../../illustrations/stat.png";
+import settingsImage from "../../illustrations/settings.jpg";
+import realTimeImage from "../../illustrations/real-time.jpg";
+import securePaymentImage from "../../illustrations/secure_payment.jpg";
+
+// Assurez-vous que les chemins des fichiers d'images correspondent à votre structure de projet.
 
 // Wrapper pour le conteneur principal
 const Wrapper = styled.div`
