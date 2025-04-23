@@ -3,6 +3,10 @@ import styled from "@emotion/styled";
 import { Tooltip, Box, Container, Typography } from "@mui/material";
 import { spacing } from "@mui/system";
 
+// Import des images SVG depuis le dossier illustrations
+import lrvLogo from "../../illustrations/Lrv.svg";
+import sodeicoLogo from "../../illustrations/Sodeico.svg";
+
 const Wrapper = styled.div`
   ${spacing};
   text-align: center;
@@ -42,21 +46,24 @@ function Integrations() {
         </Typography>
 
         <Box my={7}>
-          <Tooltip title="Lrv">
+          {/* Logo Lrv */}
+          <Tooltip title="Le rayon vert">
             <Brand>
               <BrandIcon
                 alt="Lrv"
-                src="/static/img/brands/Lrv.png"
-                style={{ height: "30px" }}
+                src={lrvLogo} // Mise à jour du chemin
+                style={{ height: "80px" }}
               />
             </Brand>
           </Tooltip>
+
+          {/* Logo Sodeico */}
           <Tooltip title="Sodeico">
             <Brand>
               <BrandIcon
                 alt="Sodeico"
-                src="/static/img/brands/Sodeico.png"
-                style={{ height: "30px" }}
+                src={sodeicoLogo} // Mise à jour du chemin
+                style={{ height: "60px" }}
               />
             </Brand>
           </Tooltip>

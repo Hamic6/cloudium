@@ -12,27 +12,52 @@ import settingsImage from "../../illustrations/settings.jpg";
 import realTimeImage from "../../illustrations/real-time.jpg";
 import securePaymentImage from "../../illustrations/secure_payment.jpg";
 
+// Wrapper pour le conteneur principal
 const Wrapper = styled.div`
   ${spacing};
-  background: ${(props) => props.theme.palette.background.paper};
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
   text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 `;
 
+// Section pour structurer les différentes parties
 const Section = styled.div`
   ${spacing};
   text-align: center;
   margin-bottom: 64px;
 `;
 
+// Style des images dans le carousel
 const CarouselImage = styled.img`
-  max-width: 35%; /* Réduction de la largeur */
-  height: auto;
+  width: 350px; /* Largeur augmentée */
+  height: 200px; /* Hauteur augmentée */
+  object-fit: contain; /* Changé de 'cover' à 'contain' pour voir l'image entière */
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 0 auto; /* Centrer l'image */
+  margin: 20px auto;
   display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8f9fa; /* Fond pour les images avec transparence */
+
+  &:hover {
+    transform: scale(1.03); /* Zoom réduit sur survol */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
 `;
 
+// Conteneur du slide pour mieux contrôler l'espace
+const SlideContainer = styled.div`
+  padding: 20px 40px; /* Plus d'espace sur les côtés */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px; /* Hauteur minimale fixe pour tous les slides */
+`;
+
+// Style pour les titres en survol
 const TypographyOverline = styled(Typography)`
   text-transform: uppercase;
   color: ${(props) => props.theme.palette.primary.main};
@@ -72,7 +97,6 @@ function Demos() {
   return (
     <Wrapper pt={16} pb={20} id="demos">
       <Container>
-        {/* Section de présentation de Cloudium */}
         <Section>
           <TypographyOverline variant="body2" gutterBottom>
             Présentation
@@ -81,11 +105,10 @@ function Demos() {
             Cloudium : L'ERP pour une gestion simplifiée
           </Typography>
           <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-            Cloudium est un ERP spécialisé dans la gestion de la facturation, conçu pour répondre aux besoins des entreprises de toutes tailles. Sa version Enterprise est entièrement customisable, permettant aux organisations d’adapter les fonctionnalités à leurs processus internes.
+            Cloudium est un ERP spécialisé dans la gestion de la facturation, conçu pour répondre aux besoins des entreprises de toutes tailles. Sa version Enterprise est entièrement customisable, permettant aux organisations d'adapter les fonctionnalités à leurs processus internes.
           </Typography>
         </Section>
 
-        {/* Avantages clés avec carousel */}
         <Section>
           <TypographyOverline variant="body2" gutterBottom>
             Avantages clés
@@ -96,28 +119,47 @@ function Demos() {
             infiniteLoop
             autoPlay
             interval={5000}
+            centerMode={true} // Active le mode centré
+            centerSlidePercentage={40} // Ajuste la largeur du slide visible
+            renderIndicator={(onClickHandler, isSelected, index, label) => (
+              <li
+                style={{
+                  background: isSelected ? "#0d6efd" : "#ccc",
+                  width: 10,
+                  height: 10,
+                  borderRadius: "50%",
+                  display: "inline-block",
+                  margin: "0 5px",
+                  cursor: "pointer",
+                }}
+                onClick={onClickHandler}
+                onKeyDown={onClickHandler}
+                role="button"
+                tabIndex={0}
+                aria-label={`${label} ${index + 1}`}
+              />
+            )}
           >
             {advantages.map((advantage, index) => (
-              <div key={index}>
+              <SlideContainer key={index}>
                 <CarouselImage src={advantage.image} alt={advantage.title} />
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h6" gutterBottom style={{ marginTop: '20px' }}>
                   {advantage.title}
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textSecondary" style={{ maxWidth: '500px' }}>
                   {advantage.description}
                 </Typography>
-              </div>
+              </SlideContainer>
             ))}
           </Carousel>
         </Section>
 
-        {/* Possibilité de demander une démo */}
         <Section>
           <TypographyOverline variant="body2" gutterBottom>
             Demandez une démo
           </TypographyOverline>
           <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-            Testez Cloudium avant de souscrire. Explorez ses fonctionnalités grâce à une version d’essai limitée ou demandez une démonstration personnalisée.
+            Testez Cloudium avant de souscrire. Explorez ses fonctionnalités grâce à une version d'essai limitée ou demandez une démonstration personnalisée.
           </Typography>
           <Box mt={4}>
             <Button variant="contained" color="primary" onClick={handleDemoRequest}>

@@ -15,6 +15,9 @@ import { spacing } from "@mui/system";
 import { Visibility as VisibilityIcon } from "@mui/icons-material";
 import { ArrowForward as ArrowForwardIcon } from "@mui/icons-material";
 
+// Import de l'image home.png
+import homeImage from "../../illustrations/home.png";
+
 const Typography = styled(MuiTypography)(spacing);
 
 const Wrapper = styled.div`
@@ -151,8 +154,7 @@ function Introduction() {
               lg: 8,
             }}
           >
-            <Content>
-              <Version variant="body2">v1.0.0</Version>
+            <Content>  
               <Title variant="h1" gutterBottom>
                 Simplifiez votre gestion avec <span>Cloudium</span>
               </Title>
@@ -181,38 +183,14 @@ function Introduction() {
                 </Button>
               </Box>
 
-              <Typography variant="body2" color="textSecondary">
-                Disponible pour :
-              </Typography>
+              
               <div
                 className={`animate__animated ${
                   triggerAnimation ? "animate__fadeIn" : ""
                 }`}
                 style={{ opacity: triggerAnimation ? 1 : 0 }}
               >
-                <Box my={3}>
-                  <Tooltip title="JavaScript">
-                    <BrandIcon
-                      alt="JavaScript"
-                      src="/static/img/brands/javascript.svg"
-                      style={{ width: "40px" }}
-                    />
-                  </Tooltip>
-                  <Tooltip title="TypeScript">
-                    <BrandIcon
-                      alt="TypeScript"
-                      src="/static/img/brands/typescript.svg"
-                      style={{ width: "40px", background: "#FFF" }}
-                    />
-                  </Tooltip>
-                  <Tooltip title="Figma">
-                    <BrandIcon
-                      alt="Figma"
-                      src="/static/img/brands/figma.svg"
-                      style={{ width: "22px" }}
-                    />
-                  </Tooltip>
-                </Box>
+                
               </div>
             </Content>
           </Grid>
@@ -236,7 +214,7 @@ function Introduction() {
                 <NavLink to="/dashboard/analytics" target="_blank">
                   <Image
                     alt="Cloudium ERP Dashboard"
-                    src={`/static/img/screenshots/dashboard-analytics-large.jpg`}
+                    src={homeImage} // Mise à jour de l'image
                   />
                 </NavLink>
               </ImageWrapper>
