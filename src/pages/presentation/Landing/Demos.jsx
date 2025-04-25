@@ -67,6 +67,28 @@ const TypographyOverline = styled(Typography)`
   font-weight: ${(props) => props.theme.typography.fontWeightMedium};
 `;
 
+const SectionTitle = styled(Typography)`
+  font-size: 2rem; /* Taille par défaut */
+  font-weight: ${(props) => props.theme.typography.fontWeightBold};
+  margin-bottom: ${(props) => props.theme.spacing(2)};
+
+  ${(props) => props.theme.breakpoints.down("sm")} {
+    font-size: 1.5rem; /* Réduction de la taille sur mobile */
+  }
+`;
+
+const SubtitleText = styled(Typography)`
+  font-size: 1.25rem; /* Taille par défaut */
+  color: ${(props) => props.theme.palette.text.secondary};
+  line-height: 1.6;
+  margin: ${(props) => props.theme.spacing(2)} auto;
+
+  ${(props) => props.theme.breakpoints.down("sm")} {
+    font-size: 1rem; /* Réduction de la taille sur mobile */
+    line-height: 1.4; /* Réduction de l'espacement entre les lignes */
+  }
+`;
+
 function Demos() {
   const navigate = useNavigate();
   const theme = useTheme();
@@ -114,12 +136,12 @@ function Demos() {
           <TypographyOverline variant="body2" gutterBottom>
             Présentation
           </TypographyOverline>
-          <Typography variant={isMobile ? "h3" : "h2"} component="h3" gutterBottom>
+          <SectionTitle variant="h2" component="h3" gutterBottom>
             Cloudium : L'ERP pour une gestion simplifiée
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+          </SectionTitle>
+          <SubtitleText variant="subtitle1" gutterBottom>
             Cloudium est un ERP spécialisé dans la gestion de la facturation, conçu pour répondre aux besoins des entreprises de toutes tailles. Sa version Enterprise est entièrement customisable, permettant aux organisations d'adapter les fonctionnalités à leurs processus internes.
-          </Typography>
+          </SubtitleText>
         </Section>
 
         <Section>

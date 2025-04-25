@@ -158,7 +158,7 @@ const Title = styled(Typography)`
   }
 
   ${(props) => props.theme.breakpoints.down("sm")} {
-    font-size: 1.5rem; /* Réduction de la taille sur mobile */
+    font-size: 1.4rem; /* Réduction de la taille sur mobile */
     margin-bottom: ${(props) => props.theme.spacing(2)};
   }
 
@@ -170,25 +170,25 @@ const Title = styled(Typography)`
 
 const Subtitle = styled(Typography)`
   font-size: 1.25rem;
-  font-weight: ${props => props.theme.typography.fontWeightRegular};
-  margin: ${props => props.theme.spacing(2)} auto;
+  font-weight: ${(props) => props.theme.typography.fontWeightRegular};
+  margin: ${(props) => props.theme.spacing(2)} auto;
   max-width: 800px;
-  color: ${props => props.theme.palette.text.secondary};
+  color: ${(props) => props.theme.palette.text.secondary};
   line-height: 1.6;
 
-  ${props => props.theme.breakpoints.up("xl")} {
+  ${(props) => props.theme.breakpoints.up("xl")} {
     font-size: 1.5rem;
   }
 
-  ${props => props.theme.breakpoints.down("md")} {
+  ${(props) => props.theme.breakpoints.down("md")} {
     font-size: 1.1rem;
     max-width: 90%;
   }
 
-  ${props => props.theme.breakpoints.down("sm")} {
-    font-size: 1rem;
-    margin: ${props => props.theme.spacing(1.5)} auto;
-    line-height: 1.5;
+  ${(props) => props.theme.breakpoints.down("sm")} {
+    font-size: 0.95rem; /* Réduction de la taille sur mobile */
+    margin: ${(props) => props.theme.spacing(1.5)} auto;
+    line-height: 1.4; /* Réduction de l'espacement entre les lignes */
   }
 `;
 

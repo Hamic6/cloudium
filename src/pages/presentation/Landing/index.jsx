@@ -6,7 +6,7 @@ import Demos from "./Demos";
 import Testimonial from "./Testimonial";
 import Integrations from "./Integrations";
 import Features from "./Features";
-import FAQ from "./FAQ";
+import FAQ from "./FAQ"; // Import du composant FAQ
 import JoinUs from "./JoinUs";
 
 function Presentation() {
@@ -17,7 +17,8 @@ function Presentation() {
       <Demos />
       <Testimonial />
       <Integrations />
-      <Features />     
+      <Features />
+      <FAQ /> {/* Réintégration du composant FAQ */}
       <JoinUs />
     </React.Fragment>
   );
