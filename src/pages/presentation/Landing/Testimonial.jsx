@@ -13,13 +13,6 @@ const Wrapper = styled.div`
   ${spacing};
   background: ${(props) => props.theme.palette.background.paper};
   text-align: center;
-  padding-top: ${(props) => props.theme.spacing(10)};
-  padding-bottom: ${(props) => props.theme.spacing(20)};
-
-  ${(props) => props.theme.breakpoints.down("sm")} {
-    padding-top: ${(props) => props.theme.spacing(6)}; // Reduced padding for mobile
-    padding-bottom: ${(props) => props.theme.spacing(12)}; // Reduced padding for mobile
-  }
 `;
 
 const Container = styled(MuiContainer)`
@@ -34,41 +27,17 @@ const Avatar = styled(MuiAvatar)`
   height: 48px;
 `;
 
-const TypographyTitle = styled(Typography)`
-  font-size: 2rem; /* Taille par défaut */
-  font-weight: ${(props) => props.theme.typography.fontWeightBold};
-  margin-bottom: ${(props) => props.theme.spacing(3)};
-
-  ${(props) => props.theme.breakpoints.down("sm")} {
-    font-size: 1rem; /* Réduction de moitié pour mobile */
-    margin-bottom: ${(props) => props.theme.spacing(2)};
-  }
-`;
-
 const AvatarWrapper = styled.div`
   text-align: left;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: ${(props) => props.theme.spacing(3)};
-
-  ${(props) => props.theme.breakpoints.down("sm")} {
-    margin-top: ${(props) => props.theme.spacing(2)}; // Reduced margin for mobile
-  }
-`;
-
-const TypographyBody = styled(Typography)`
-  font-size: 1rem; /* Default size */
-  color: ${(props) => props.theme.palette.text.secondary};
-
-  ${(props) => props.theme.breakpoints.down("sm")} {
-    font-size: 0.875rem; /* Reduced size for mobile */
-  }
 `;
 
 function Testimonial() {
   return (
-    <Wrapper>
+    <Wrapper pt={10} pb={20}>
       <Container>
         <Grid container alignItems="center" justifyContent="center">
           <Grid
@@ -77,16 +46,23 @@ function Testimonial() {
               md: 8,
             }}
           >
-            <TypographyTitle variant="h3" component="h3" gutterBottom>
-              &quot;Cloudium est une application qui a su gérer et moderniser la facturation dans notre 
-              Entreprise &quot;
-            </TypographyTitle>
+            <Typography variant="h2" component="h3" gutterBottom>
+              &quot;Mira Pro is one of the best advanced React dashboard
+              templates for developers.&quot;
+            </Typography>
             <AvatarWrapper>
-              <TypographyBody color="textSecondary" variant="body2">
-                Cyrille Navarre
+              <a
+                href="https://x.com/olivtassinari"
+                target="_blank"
+                rel="nofollow noreferrer noopener"
+              >
+                <Avatar src="/static/img/avatars/olivier.jpg" mr={3} />
+              </a>
+              <Typography color="textSecondary" variant="body2">
+                Olivier Tassinari,
                 <br />
-                Directeur chez {"Rayonvert "}
-              </TypographyBody>
+                Co-Founder MUI
+              </Typography>
             </AvatarWrapper>
           </Grid>
         </Grid>

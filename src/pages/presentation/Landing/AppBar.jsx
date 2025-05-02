@@ -40,14 +40,11 @@ const AppBarComponent = () => (
       <Toolbar>
         <Container>
           <Grid container alignItems="center">
-            {/* Logo et nom de la marque */}
             <Grid>
               <Brand>
                 <BrandIcon /> Cloudium
               </Brand>
             </Grid>
-
-            {/* Liens de navigation */}
             <Grid size="grow" />
             <Grid>
               <Box sx={{ display: { xs: "none", md: "inline-block" } }}>
@@ -55,55 +52,38 @@ const AppBarComponent = () => (
                   ml={2}
                   color="inherit"
                   component={Link}
-                  to="/"
+                  to="/dashboard/analytics"
+                  target="_blank"
                 >
-                  Accueil
+                  Live Preview
                 </Button>
                 <Button
                   ml={2}
                   color="inherit"
                   component={Link}
-                  to="/pricing"
+                  to="/documentation/welcome"
+                  target="_blank"
                 >
-                  Tarifs
+                  Documentation
                 </Button>
                 <Button
                   ml={2}
                   color="inherit"
                   component={Link}
-                  to="/support"
+                  to="/documentation/support"
+                  target="_blank"
                 >
                   Support
                 </Button>
-                <Button
-                  ml={2}
-                  color="inherit"
-                  component={Link}
-                  to="/about"
-                >
-                  À propos
-                </Button>
               </Box>
-            </Grid>
-
-            {/* Boutons Connexion et Inscription */}
-            <Grid>
-              <Button
-                ml={2}
-                color="inherit"
-                component={Link}
-                to="/login"
-              >
-                Connexion
-              </Button>
               <Button
                 ml={2}
                 color="primary"
                 variant="contained"
-                component={Link}
-                to="/signup"
+                href="https://mui.com/store/items/mira-pro-react-material-admin-dashboard/"
+                target="_blank"
               >
-                Inscription
+                Buy Now
               </Button>
             </Grid>
           </Grid>

@@ -1,77 +1,82 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Container, Grid, Typography, Link } from "@mui/material";
-import { Facebook, Twitter, LinkedIn } from "@mui/icons-material";
 
-const FooterWrapper = styled.div`
-  background: #181d2d;
-  color: ${(props) => props.theme.palette.common.white};
-  padding: 32px 0;
-  text-align: center;
+import {
+  Grid2 as Grid,
+  List,
+  ListItemText as MuiListItemText,
+  ListItemButton as MuiListItemButton,
+} from "@mui/material";
+
+const Wrapper = styled.div`
+  padding: ${(props) => props.theme.spacing(0.25)}
+    ${(props) => props.theme.spacing(4)};
+  background: ${(props) => props.theme.footer.background};
+  position: relative;
 `;
 
-const FooterLink = styled(Link)`
-  color: ${(props) => props.theme.palette.common.white};
-  text-decoration: none;
-  margin: 0 8px;
+const ListItemButton = styled(MuiListItemButton)`
+  display: inline-block;
+  width: auto;
+  padding-left: ${(props) => props.theme.spacing(2)};
+  padding-right: ${(props) => props.theme.spacing(2)};
 
-  &:hover {
-    text-decoration: underline;
+  &,
+  &:hover,
+  &:active {
+    color: #ff0000;
   }
 `;
 
-const SocialIcon = styled.a`
-  color: ${(props) => props.theme.palette.common.white};
-  margin: 0 8px;
-  font-size: 24px;
-
-  &:hover {
-    color: ${(props) => props.theme.palette.primary.main};
+const ListItemText = styled(MuiListItemText)`
+  span {
+    color: ${(props) => props.theme.footer.color};
   }
 `;
 
 function Footer() {
   return (
-    <FooterWrapper>
-      <Container>
-        <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Cloudium ERP
-            </Typography>
-            <Typography variant="body2">
-              Une plateforme de gestion de la facturation et des stocks pour les entreprises modernes.
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Liens utiles
-            </Typography>
-            <FooterLink href="/about">À propos</FooterLink>
-            <FooterLink href="/pricing">Tarifs</FooterLink>
-            <FooterLink href="/contact">Contact</FooterLink>
-            <FooterLink href="/privacy">Politique de confidentialité</FooterLink>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Suivez-nous
-            </Typography>
-            <SocialIcon href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <Facebook />
-            </SocialIcon>
-            <SocialIcon href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <Twitter />
-            </SocialIcon>
-            <SocialIcon href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <LinkedIn />
-            </SocialIcon>
-          </Grid>
+    <Wrapper>
+      <Grid container spacing={0}>
+        <Grid
+          sx={{ display: { xs: "none", md: "block" } }}
+          container
+          size={{
+            xs: 12,
+            md: 6,
+          }}
+        >
+          <List>
+            <ListItemButton component="a" href="#">
+              <ListItemText primary="Support" />
+            </ListItemButton>
+            <ListItemButton component="a" href="#">
+              <ListItemText primary="Help Center" />
+            </ListItemButton>
+            <ListItemButton component="a" href="#">
+              <ListItemText primary="Privacy" />
+            </ListItemButton>
+            <ListItemButton component="a" href="#">
+              <ListItemText primary="Terms of Service" />
+            </ListItemButton>
+          </List>
         </Grid>
-        <Typography variant="body2" style={{ marginTop: "16px" }}>
-          © {new Date().getFullYear()} Cloudium. Tous droits réservés.
-        </Typography>
-      </Container>
-    </FooterWrapper>
+        <Grid
+          container
+          justifyContent="flex-end"
+          size={{
+            xs: 12,
+            md: 6,
+          }}
+        >
+          <List>
+            <ListItemButton>
+              <ListItemText primary={`© ${new Date().getFullYear()} - Mira`} />
+            </ListItemButton>
+          </List>
+        </Grid>
+      </Grid>
+    </Wrapper>
   );
 }
 

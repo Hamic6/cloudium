@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 
 import {
-  Grid,
+  Grid2 as Grid,
   Divider as MuiDivider,
   Typography as MuiTypography,
 } from "@mui/material";
@@ -28,8 +28,8 @@ function Default() {
   return (
     <React.Fragment>
       <Helmet title="Default Dashboard" />
-      <Grid container justifyContent="space-between" spacing={6}>
-        <Grid item>
+      <Grid justifyContent="space-between" container spacing={6}>
+        <Grid>
           <Typography variant="h3" gutterBottom>
             Default Dashboard
           </Typography>
@@ -41,13 +41,21 @@ function Default() {
           </Typography>
         </Grid>
 
-        <Grid item>
+        <Grid>
           <Actions />
         </Grid>
       </Grid>
       <Divider my={6} />
       <Grid container spacing={6}>
-        <Grid item xs={12} sm={6} md={6} lg={3}>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 12,
+            md: 6,
+            lg: 3,
+            xl: "grow",
+          }}
+        >
           <Stats
             title="Sales Today"
             amount="2.532"
@@ -56,7 +64,15 @@ function Default() {
             percentagecolor={green[500]}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={6} lg={3}>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 12,
+            md: 6,
+            lg: 3,
+            xl: "grow",
+          }}
+        >
           <Stats
             title="Visitors"
             amount="170.212"
@@ -65,7 +81,15 @@ function Default() {
             percentagecolor={red[500]}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={6} lg={3}>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 12,
+            md: 6,
+            lg: 3,
+            xl: "grow",
+          }}
+        >
           <Stats
             title="Total Earnings"
             amount="$ 24.300"
@@ -74,7 +98,15 @@ function Default() {
             percentagecolor={green[500]}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={6} lg={3}>
+        <Grid
+          size={{
+            xs: 12,
+            sm: 12,
+            md: 6,
+            lg: 3,
+            xl: "grow",
+          }}
+        >
           <Stats
             title="Pending Orders"
             amount="45"
@@ -86,18 +118,38 @@ function Default() {
         </Grid>
       </Grid>
       <Grid container spacing={6}>
-        <Grid item xs={12} lg={8}>
+        <Grid
+          size={{
+            xs: 12,
+            lg: 8,
+          }}
+        >
           <LineChart />
         </Grid>
-        <Grid item xs={12} lg={4}>
+        <Grid
+          size={{
+            xs: 12,
+            lg: 4,
+          }}
+        >
           <DoughnutChart />
         </Grid>
       </Grid>
       <Grid container spacing={6}>
-        <Grid item xs={12} lg={4}>
+        <Grid
+          size={{
+            xs: 12,
+            lg: 4,
+          }}
+        >
           <BarChart />
         </Grid>
-        <Grid item xs={12} lg={8}>
+        <Grid
+          size={{
+            xs: 12,
+            lg: 8,
+          }}
+        >
           <Table />
         </Grid>
       </Grid>
