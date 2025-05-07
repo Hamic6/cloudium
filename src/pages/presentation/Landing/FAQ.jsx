@@ -6,9 +6,10 @@ import {
   AccordionDetails as MuiAccordionDetails,
   AccordionSummary as MuiAccordionSummary,
   Container,
-  Grid2 as Grid,
+  Grid,
   Typography,
-  Link,
+  TextField,
+  Button,
 } from "@mui/material";
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import { spacing } from "@mui/system";
@@ -52,29 +53,35 @@ const AccordionDetails = styled(MuiAccordionDetails)`
   padding-right: 16px;
 `;
 
+const ContactForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+
+  .MuiOutlinedInput-root {
+    background-color: ${(props) => props.theme.palette.common.white};
+    border-radius: 4px;
+  }
+`;
+
 function FAQ() {
   return (
     <Wrapper pt={20} pb={16}>
       <Container>
         <TypographyOverline variant="body2" gutterBottom>
-          Mira Pro
+          Cloudium
         </TypographyOverline>
         <Typography variant="h2" component="h3" gutterBottom>
-          Frequently asked questions
+          Questions fréquentes
         </Typography>
         <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-          The questions below have been selected from those most commonly asked
-          by our customers.
+          Retrouvez ici les réponses aux questions les plus courantes.
         </Typography>
         <Spacer mb={8} />
 
         <Grid container alignItems="center" justifyContent="center">
-          <Grid
-            size={{
-              xs: 12,
-              xl: 8,
-            }}
-          >
+          <Grid item xs={12} md={8}>
             <Accordion defaultExpanded={true}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -82,16 +89,14 @@ function FAQ() {
                 id="faq1-header"
               >
                 <Typography variant="subtitle1">
-                  Does this product support Next.js / Vite / Create React App?
+                  Comment puis-je m'inscrire ?
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Yes, Mira is available for both Next.js and Vite, and the
-                  versions are included in the package, ready for download after
-                  the purchase. Additionally, the Create React App (CRA) version
-                  is also available upon request via email (
-                  <a href="mailto:support@bootlab.io">support@bootlab.io</a>).
+                  Vous pouvez vous inscrire en cliquant sur le bouton
+                  "Inscription" en haut de la page et en remplissant le
+                  formulaire d'inscription.
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -102,21 +107,12 @@ function FAQ() {
                 id="faq2-header"
               >
                 <Typography variant="subtitle1">
-                  Can I use this template for my client?
+                  Quels moyens de paiement acceptez-vous ?
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Yes, the marketplace license allows you to use this theme in
-                  any type of end product. For more information on licenses,{" "}
-                  <Link
-                    href="https://material-ui.com/store/license/"
-                    target="_blank"
-                    rel="nofollow noreferrer noopener"
-                  >
-                    click here
-                  </Link>
-                  .
+                  Nous acceptons les paiements par carte bancaire et via Stripe.
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -127,14 +123,14 @@ function FAQ() {
                 id="faq3-header"
               >
                 <Typography variant="subtitle1">
-                  Does this product support TypeScript?
+                  Comment contacter le support technique ?
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Yes, the TypeScript version is included in the Standard Plus
-                  and Extended License. The default (JavaScript) version is
-                  available on all licenses.
+                  Vous pouvez nous contacter par email à{" "}
+                  <a href="mailto:support@cloudium.com">support@cloudium.com</a>{" "}
+                  ou via le chat en ligne disponible 24/7.
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -145,13 +141,13 @@ function FAQ() {
                 id="faq4-header"
               >
                 <Typography variant="subtitle1">
-                  Does this product work with npm / yarn?
+                  Puis-je modifier mon abonnement ?
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Yes, Mira has been thoroughly tested with npm and yarn (LTS
-                  versions).
+                  Oui, vous pouvez modifier votre abonnement à tout moment via
+                  votre espace client.
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -162,42 +158,82 @@ function FAQ() {
                 id="faq5-header"
               >
                 <Typography variant="subtitle1">
-                  Are design assets (Figma) included?
+                  Où puis-je trouver vos conditions générales ?
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="subtitle1" color="textSecondary">
-                  Yes, design assets (Figma) are included in the Standard Plus
-                  and Extended License. Only a basic implementation of each
-                  component is included, which enables you to combine them
-                  however you like. Besides the components, the resources
-                  contain the following pages: analytics dashboard, default
-                  dashboard, settings, pricing, profile, projects, invoice,
-                  tasks, calendar month view, calendar day view, sign in, sign
-                  up, and an error page.
+                  Vous pouvez consulter nos conditions générales en bas de
+                  chaque page ou en cliquant{" "}
+                  <a href="/terms" target="_blank" rel="noopener noreferrer">
+                    ici
+                  </a>
+                  .
                 </Typography>
               </AccordionDetails>
             </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="faq6-content"
-                id="faq6-header"
+          </Grid>
+        </Grid>
+
+        {/* Formulaire de contact */}
+        <Grid container alignItems="center" justifyContent="center">
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={5}
+            sx={{
+              padding: { xs: 2, sm: 4 }, // Réduction des marges sur mobile
+            }}
+          >
+            <ContactForm
+              style={{
+                maxWidth: "100%", // Largeur maximale pour mobile
+                padding: "16px", // Ajout d'espacement interne
+              }}
+            >
+              <TextField
+                label="Nom"
+                variant="outlined"
+                fullWidth
+                required
+                sx={{
+                  fontSize: { xs: "14px", sm: "16px" }, // Réduction de la taille de police sur mobile
+                }}
+              />
+              <TextField
+                label="Email"
+                variant="outlined"
+                fullWidth
+                required
+                sx={{
+                  fontSize: { xs: "14px", sm: "16px" }, // Réduction de la taille de police sur mobile
+                }}
+              />
+              <TextField
+                label="Message"
+                variant="outlined"
+                fullWidth
+                multiline
+                rows={4}
+                required
+                sx={{
+                  fontSize: { xs: "14px", sm: "16px" }, // Réduction de la taille de police sur mobile
+                }}
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                sx={{
+                  width: "50%",
+                  alignSelf: "center",
+                  fontSize: { xs: "12px", sm: "14px" }, // Réduction de la taille du texte sur mobile
+                }}
               >
-                <Typography variant="subtitle1">
-                  How can I request support?
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography variant="subtitle1" color="textSecondary">
-                  You can use our dedicated support email (
-                  <Link href="mailto:support@bootlab.io">
-                    support@bootlab.io
-                  </Link>
-                  ) to send your issues or feedback. We are here to help.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+                Envoyer
+              </Button>
+            </ContactForm>
           </Grid>
         </Grid>
       </Container>

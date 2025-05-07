@@ -15,13 +15,12 @@ import { ArrowForward as ArrowForwardIcon } from "@mui/icons-material";
 
 import {
   Mail as MailIcon,
-  Code as CodeIcon,
+  BarChart as BarChartIcon,
+  PieChart as PieChartIcon,
+  AlertCircle as AlertCircleIcon,
   Users as UsersIcon,
-  BookOpen as BookOpenIcon,
-  PlusCircle as PlusCircleIcon,
+  FileText as FileTextIcon,
 } from "lucide-react";
-
-import { ReactComponent as FigmaIcon } from "@/vendor/figma.svg";
 
 const Wrapper = styled.div`
   ${spacing};
@@ -90,57 +89,42 @@ function Features() {
     <Wrapper py={20}>
       <Container>
         <TypographyOverline variant="body2" gutterBottom>
-          Features
+          Fonctionnalités
         </TypographyOverline>
         <Typography variant="h2" component="h3" gutterBottom>
-          Developers love Mira Pro
+          Cloudium Pro
         </Typography>
         <Box mb={8} />
         <Grid container spacing={6}>
           <Feature
-            Icon={CodeIcon}
-            title="Modern Technology Stack"
-            description="Mira is built to make your life easier. Theme provider, build tooling, documentation, and 400+ components. "
+            Icon={BarChartIcon}
+            title="Statistiques de facturation"
+            description="Suivez vos données clés : total des factures émises, montant total facturé et comparaison entre factures payées et en attente."
           />
           <Feature
-            Icon={PlusCircleIcon}
-            title="Multiple Plugins"
-            description="Various third-party plugins are fully integrated, like Chart.js, FullCalendar, WYSIWYG Editors, Formik and Yup."
-          />
-          <Feature
-            Icon={MailIcon}
-            title="Dev-to-Dev Support"
-            description="Our themes are supported by specialists who provide quick and effective support. Usually an email reply takes <24h."
+            Icon={PieChartIcon}
+            title="Graphiques et visualisations"
+            description="Analysez vos performances avec des graphiques à barres ou à secteurs pour les ventes, des graphiques linéaires pour les tendances et des diagrammes pour la répartition des services."
           />
           <Feature
             Icon={UsersIcon}
-            title="Authentication Examples"
-            description="The package comes with fully working authentication examples, including Firebase, Auth0, AWS Cognito and JWT."
+            title="Gestion des clients"
+            description="Ajoutez, modifiez et gérez vos clients facilement. Accédez à toutes les informations nécessaires pour chaque client. Obtenez des statistiques détaillées sur la facturation de chaque client, y compris les paiements reçus, les factures en attente et les performances globales."
+          />
+          
+          <Feature
+            Icon={AlertCircleIcon}
+            title="Alertes et notifications"
+            description="Recevez des rappels pour les factures en retard, les prochains paiements dus et les factures récurrentes à envoyer."
           />
           <Feature
-            Icon={BookOpenIcon}
-            title="Detailed Documentation"
-            description="We've written extensive documentation for the plugins and tools we're using, varying from Redux to ESLint."
-          />
-          <Feature
-            Icon={FigmaIcon}
-            title="Figma Assets"
-            description="Designers, we've got you covered. Figma files are available in the Standard Plus and Extended License."
+            Icon={FileTextIcon}
+            title="Personnalisation complète"
+            description="Cloudium est entièrement personnalisable pour répondre à vos besoins spécifiques. Que ce soit pour des fonctionnalités uniques ou des ajustements spécifiques, notre solution s'adapte parfaitement à vos exigences."
           />
         </Grid>
 
         <Box mt={4}>
-          <Button
-            component={NavLink}
-            to="/documentation/welcome"
-            variant="contained"
-            color="secondary"
-            size="large"
-            target="_blank"
-          >
-            Open Documentation
-            <ArrowForward />
-          </Button>
         </Box>
       </Container>
     </Wrapper>
