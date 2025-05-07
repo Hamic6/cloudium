@@ -188,17 +188,35 @@ function FAQ() {
           >
             <ContactForm
               style={{
-                maxWidth: "100%", // Largeur maximale pour mobile
-                padding: "16px", // Ajout d'espacement interne
+                maxWidth: "100%",
+                padding: "24px", // Augmentation de l'espacement interne
+                borderRadius: "8px", // Coins arrondis pour un design moderne
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", // Ajout d'une ombre pour un effet de profondeur
+                backgroundColor: "#fff", // Fond blanc pour contraster avec l'arrière-plan
               }}
             >
+              <Typography
+                variant="h6"
+                align="center"
+                gutterBottom
+                sx={{
+                  fontWeight: 600,
+                  color: "text.primary",
+                  mb: 2,
+                }}
+              >
+                Contactez-nous
+              </Typography>
               <TextField
                 label="Nom"
                 variant="outlined"
                 fullWidth
                 required
                 sx={{
-                  fontSize: { xs: "14px", sm: "16px" }, // Réduction de la taille de police sur mobile
+                  fontSize: { xs: "14px", sm: "16px" },
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "8px", // Coins arrondis pour les champs
+                  },
                 }}
               />
               <TextField
@@ -207,7 +225,10 @@ function FAQ() {
                 fullWidth
                 required
                 sx={{
-                  fontSize: { xs: "14px", sm: "16px" }, // Réduction de la taille de police sur mobile
+                  fontSize: { xs: "14px", sm: "16px" },
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "8px",
+                  },
                 }}
               />
               <TextField
@@ -218,7 +239,10 @@ function FAQ() {
                 rows={4}
                 required
                 sx={{
-                  fontSize: { xs: "14px", sm: "16px" }, // Réduction de la taille de police sur mobile
+                  fontSize: { xs: "14px", sm: "16px" },
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "8px",
+                  },
                 }}
               />
               <Button
@@ -226,9 +250,16 @@ function FAQ() {
                 color="primary"
                 type="submit"
                 sx={{
-                  width: "50%",
-                  alignSelf: "center",
-                  fontSize: { xs: "12px", sm: "14px" }, // Réduction de la taille du texte sur mobile
+                  width: "100%",
+                  fontSize: { xs: "14px", sm: "16px" },
+                  fontWeight: 600,
+                  py: 1.5, // Augmentation de la hauteur du bouton
+                  borderRadius: "8px", // Coins arrondis pour le bouton
+                  mt: 2, // Espacement supérieur
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Ombre pour le bouton
+                  "&:hover": {
+                    boxShadow: "0 6px 12px rgba(0, 0, 0, 0.3)", // Ombre plus prononcée au survol
+                  },
                 }}
               >
                 Envoyer

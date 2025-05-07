@@ -2,7 +2,7 @@ import React from "react";
 
 import AppBar from "./AppBar";
 import Introduction from "./Introduction";
-import Demos from "./Demos";
+import Offres from "./Offres";
 import Testimonial from "./Testimonial";
 import Integrations from "./Integrations";
 import Features from "./Features";
@@ -14,7 +14,7 @@ function Presentation() {
     <React.Fragment>
       <AppBar />
       <Introduction />
-      <Demos />
+      <Offres />
       <Testimonial />
       <Integrations />
       <Features />
