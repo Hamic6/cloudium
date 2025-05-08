@@ -47,7 +47,7 @@ function Testimonial() {
             }}
           >
             <Typography variant="h2" component="h3" gutterBottom>
-              &quot;Mira Pro is one of the best advanced React dashboard
+              &quot;Cloudium is one of the best advanced React dashboard
               templates for developers.&quot;
             </Typography>
             <AvatarWrapper>

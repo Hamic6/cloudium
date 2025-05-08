@@ -152,10 +152,10 @@ function Introduction() {
             }}
           >
             <Content>
-              <Version variant="body2">v5.0.0</Version>
+              <Version variant="body2">v1.0.0</Version>
               <Title variant="h1" gutterBottom>
-                The simplest and fastest way to build your next{" "}
-                <span>Material UI</span> dashboard or app.
+               Le moyen le plus simple de gérer votre facturation {" "}
+                <span>Cloudium</span> ERP.
               </Title>
               <Grid container justifyContent="center" spacing={4}>
                 <Grid
@@ -165,9 +165,8 @@ function Introduction() {
                   }}
                 >
                   <Subtitle color="textSecondary">
-                    Mira comes with hundreds of UI elements, forms, tables,
-                    charts, pages and icons that helps you to create your web
-                    apps or applications faster.
+                   Cloudium est un ERP moderne et entièrement personnalisable, conçu pour
+                   répondre aux besoins des entreprises de toutes tailles. 
                   </Subtitle>
                 </Grid>
               </Grid>
@@ -185,7 +184,7 @@ function Introduction() {
               </Box>
 
               <Typography variant="body2" color="textSecondary">
-                Available for:
+              Disponible sur tous les appareils, y compris les mobiles et les tablettes.
               </Typography>
               <div
                 className={`animate__animated ${
@@ -238,7 +237,7 @@ function Introduction() {
               <ImageWrapper>
                 <NavLink to="/dashboard/analytics" target="_blank">
                   <Image
-                    alt="Mira - React Admin Template"
+                    alt="Tableau de bord Cloudium"
                     src={`/static/img/screenshots/dashboard-analytics-large.jpg`}
                   />
                 </NavLink>
