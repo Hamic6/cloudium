@@ -179,24 +179,28 @@ function Offres() {
         <Grid 
           container 
           spacing={isMobile ? 2 : 4} 
-          justifyContent="center"
+          justifyContent="center" 
           alignItems="stretch"
+          sx={{ maxWidth: 1200, mx: 'auto' }} // Limite la largeur totale des cartes
         >
           {pricingPlans.map((plan, index) => (
             <Grid 
               item 
               xs={12} 
-              sm={6} 
+              sm={8} // Réduction de la largeur sur les écrans moyens
               md={4} 
               key={index}
               sx={{
                 display: 'flex',
+                justifyContent: 'center', // Centre chaque carte
                 mt: plan.highlighted && !isMobile ? -2 : 0
               }}
             >
               <StyledCard 
                 highlighted={plan.highlighted}
                 sx={{
+                  width: '100%', // Réduction de la largeur des cartes
+                  maxWidth: 320, // Limite la largeur maximale des cartes
                   ...(plan.highlighted && {
                     borderTop: `4px solid ${theme.palette.primary.main}`,
                     position: 'relative',
