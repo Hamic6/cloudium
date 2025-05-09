@@ -59,7 +59,7 @@ function Integrations() {
             <Brand>
               <BrandIcon
                 alt="Le Rayon vert"
-                src="/src/pages/img/Lrv (2).svg" // Nouveau chemin
+                src="/img/Lrv (2).svg" // Chemin corrigé
                 style={{ height: "40px" }}
               />
             </Brand>
@@ -68,7 +68,7 @@ function Integrations() {
             <Brand>
               <BrandIcon
                 alt="Google Cloud Platform" 
-                src="/src/pages/img/google_cloud.svg" // Nouveau chemin
+                src="/img/google_cloud.svg" // Chemin corrigé
                 style={{ height: "40px" }}
               />
             </Brand>
@@ -78,7 +78,7 @@ function Integrations() {
             <Brand>
               <BrandIcon
                 alt="Sodeico"
-                src="/src/pages/img/Sodeico_logo.svg" // Nouveau chemin
+                src="/img/Sodeico_logo.svg" // Chemin corrigé
                 style={{ height: "40px" }}
               />
             </Brand>

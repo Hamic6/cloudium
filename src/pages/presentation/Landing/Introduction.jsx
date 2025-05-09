@@ -196,7 +196,7 @@ function Introduction() {
                   <Tooltip title="Microsoft">
                     <BrandIcon
                       alt="Microsoft"
-                      src="/src/pages/img/microsoft.svg" // Nouveau chemin
+                      src="/img/microsoft.svg" // Chemin corrigé
                       style={{ width: "83px" }} // Augmenté de moitié
                     />
                   </Tooltip>
@@ -204,7 +204,7 @@ function Introduction() {
                   <Tooltip title="iOS">
                     <BrandIcon
                       alt="iOS"
-                      src="/src/pages/img/ios.svg" // Nouveau chemin
+                      src="/img/ios.svg" // Chemin corrigé
                       style={{ width: "73px" }} // Augmenté de moitié
                     />
                   </Tooltip>
@@ -212,7 +212,7 @@ function Introduction() {
                   <Tooltip title="Android">
                     <BrandIcon
                       alt="Android"
-                      src="/src/pages/img/android.svg" // Nouveau chemin
+                      src="/img/android.svg" // Chemin corrigé
                       style={{ width: "73px" }} // Augmenté de moitié
                     />
                   </Tooltip>
@@ -220,7 +220,7 @@ function Introduction() {
                   <Tooltip title="Safari">
                     <BrandIcon
                       alt="Safari"
-                      src="/src/pages/img/safari.svg" // Nouveau chemin
+                      src="/img/safari.svg" // Chemin corrigé
                       style={{ width: "43px" }} // Augmenté de moitié
                     />
                   </Tooltip>
@@ -228,7 +228,7 @@ function Introduction() {
                   <Tooltip title="Edge">
                     <BrandIcon
                       alt="Edge"
-                      src="/src/pages/img/edge.svg" // Nouveau chemin
+                      src="/img/edge.svg" // Chemin corrigé
                       style={{ width: "43px" }} // Augmenté de moitié
                     />
                   </Tooltip>
@@ -256,7 +256,7 @@ function Introduction() {
                 <NavLink to="/dashboard/analytics" target="_blank">
                   <Image
                     alt="Tableau de bord Cloudium"
-                    src={`/src/pages/img/1.png`} // Nouveau chemin
+                    src="/img/1.png" // Chemin corrigé
                   />
                 </NavLink>
               </ImageWrapper>
