@@ -178,13 +178,13 @@ function Introduction() {
                   size="large"
                 >
                   <Visibility />
-                  Live Demo
+                  Essayez la démo
                   <ArrowForward />
                 </Button>
               </Box>
 
               <Typography variant="body2" color="textSecondary">
-              Disponible sur tous les appareils, y compris les mobiles et les tablettes.
+              Entièrement responsive sur les navigateurs, y compris les mobiles et les tablettes.
               </Typography>
               <div
                 className={`animate__animated ${
@@ -193,25 +193,43 @@ function Introduction() {
                 style={{ opacity: triggerAnimation ? 1 : 0 }}
               >
                 <Box my={3}>
-                  <Tooltip title="JavaScript">
+                  <Tooltip title="Microsoft">
                     <BrandIcon
-                      alt="JavaScript"
-                      src="/static/img/brands/javascript.svg"
-                      style={{ width: "40px" }}
+                      alt="Microsoft"
+                      src="/src/pages/img/microsoft.svg" // Nouveau chemin
+                      style={{ width: "83px" }} // Augmenté de moitié
                     />
                   </Tooltip>
-                  <Tooltip title="TypeScript">
+
+                  <Tooltip title="iOS">
                     <BrandIcon
-                      alt="TypeScript"
-                      src="/static/img/brands/typescript.svg"
-                      style={{ width: "40px", background: "#FFF" }}
+                      alt="iOS"
+                      src="/src/pages/img/ios.svg" // Nouveau chemin
+                      style={{ width: "73px" }} // Augmenté de moitié
                     />
                   </Tooltip>
-                  <Tooltip title="Figma">
+
+                  <Tooltip title="Android">
                     <BrandIcon
-                      alt="Figma"
-                      src="/static/img/brands/figma.svg"
-                      style={{ width: "22px" }}
+                      alt="Android"
+                      src="/src/pages/img/android.svg" // Nouveau chemin
+                      style={{ width: "73px" }} // Augmenté de moitié
+                    />
+                  </Tooltip>
+
+                  <Tooltip title="Safari">
+                    <BrandIcon
+                      alt="Safari"
+                      src="/src/pages/img/safari.svg" // Nouveau chemin
+                      style={{ width: "43px" }} // Augmenté de moitié
+                    />
+                  </Tooltip>
+
+                  <Tooltip title="Edge">
+                    <BrandIcon
+                      alt="Edge"
+                      src="/src/pages/img/edge.svg" // Nouveau chemin
+                      style={{ width: "43px" }} // Augmenté de moitié
                     />
                   </Tooltip>
                 </Box>
@@ -238,7 +256,7 @@ function Introduction() {
                 <NavLink to="/dashboard/analytics" target="_blank">
                   <Image
                     alt="Tableau de bord Cloudium"
-                    src={`/static/img/screenshots/dashboard-analytics-large.jpg`}
+                    src={`/src/pages/img/1.png`} // Nouveau chemin
                   />
                 </NavLink>
               </ImageWrapper>

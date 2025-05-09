@@ -47,8 +47,7 @@ function Testimonial() {
             }}
           >
             <Typography variant="h2" component="h3" gutterBottom>
-              &quot;Cloudium is one of the best advanced React dashboard
-              templates for developers.&quot;
+              &quot;Cloudium est un ERP professionnel et totalement customizable &quot;
             </Typography>
             <AvatarWrapper>
               <a
@@ -56,12 +55,12 @@ function Testimonial() {
                 target="_blank"
                 rel="nofollow noreferrer noopener"
               >
-                <Avatar src="/static/img/avatars/olivier.jpg" mr={3} />
+                <Avatar src="" mr={3} />
               </a>
               <Typography color="textSecondary" variant="body2">
-                Olivier Tassinari,
+                Danny Hamici,
                 <br />
-                Co-Founder MUI
+                Co-Founder Cloudium
               </Typography>
             </AvatarWrapper>
           </Grid>

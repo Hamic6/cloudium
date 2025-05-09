@@ -39,67 +39,13 @@ function Integrations() {
     <Wrapper py={20}>
       <Container>
         <TypographyOverline variant="body2" gutterBottom>
-          Integrations
+          Nos Partenaires
         </TypographyOverline>
         <Typography variant="h2" component="h3" gutterBottom>
-          Launch faster with ready-to-deploy integrations
+         Plusieurs partenaires nous font confiance 
         </Typography>
 
         <Box my={7}>
-          <Tooltip title="MUI v6">
-            <Brand>
-              <BrandIcon
-                alt="MUI"
-                src="/static/img/brands/material-ui.svg"
-                style={{ height: "34px", margin: "3px 0" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="React v18">
-            <Brand>
-              <BrandIcon
-                alt="React"
-                src="/static/img/brands/react.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="Vite v5">
-            <Brand>
-              <BrandIcon
-                alt="Vite"
-                src="/static/img/brands/vite.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="Next.js v14">
-            <Brand>
-              <BrandIcon
-                alt="Next.js"
-                src="/static/img/brands/nextjs.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="Redux">
-            <Brand>
-              <BrandIcon
-                alt="Redux"
-                src="/static/img/brands/redux.svg"
-                style={{ height: "36px", margin: "2px 0" }}
-              />
-            </Brand>
-          </Tooltip>
-          <Tooltip title="React Router v6">
-            <Brand>
-              <BrandIcon
-                alt="React Router v6"
-                src="/static/img/brands/react-router.svg"
-                style={{ height: "34px", margin: "3px 0" }}
-              />
-            </Brand>
-          </Tooltip>
           <Tooltip title="Firebase Authentication">
             <Brand>
               <BrandIcon
@@ -109,55 +55,36 @@ function Integrations() {
               />
             </Brand>
           </Tooltip>
-          <Tooltip title="Amazon Cognito">
+          <Tooltip title="Le Rayon vert">
             <Brand>
               <BrandIcon
-                alt="Amazon Cognito"
-                src="/static/img/brands/cognito.svg"
+                alt="Le Rayon vert"
+                src="/src/pages/img/Lrv (2).svg" // Nouveau chemin
                 style={{ height: "40px" }}
               />
             </Brand>
           </Tooltip>
-          <Tooltip title="Auth0">
+          <Tooltip title="Google Cloud Platform">
             <Brand>
               <BrandIcon
-                alt="Auth0"
-                src="/static/img/brands/auth0.svg"
+                alt="Google Cloud Platform" 
+                src="/src/pages/img/google_cloud.svg" // Nouveau chemin
                 style={{ height: "40px" }}
               />
             </Brand>
           </Tooltip>
-          <Tooltip title="JSON Web Token">
+
+          <Tooltip title="Sodeico">
             <Brand>
               <BrandIcon
-                alt="JWT"
-                src="/static/img/brands/jwt.svg"
+                alt="Sodeico"
+                src="/src/pages/img/Sodeico_logo.svg" // Nouveau chemin
                 style={{ height: "40px" }}
               />
             </Brand>
-          </Tooltip>
-          <Tooltip title="ESLint">
-            <Brand>
-              <BrandIcon
-                alt="eslint "
-                src="/static/img/brands/eslint.svg"
-                style={{ height: "40px" }}
-              />
-            </Brand>
-          </Tooltip>
+          </Tooltip>        
         </Box>
         <Box>
-          <Button
-            component={NavLink}
-            to="/documentation/welcome"
-            variant="contained"
-            color="secondary"
-            size="large"
-            target="_blank"
-          >
-            Open Documentation
-            <ArrowForward />
-          </Button>
         </Box>
       </Container>
     </Wrapper>
